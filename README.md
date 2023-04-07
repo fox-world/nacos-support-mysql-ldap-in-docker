@@ -1,4 +1,4 @@
-[[_TOC_]]
+
 
 > 由于`nacos`官方提供的docker镜像不支持`LDAP`登录[^1]，同时部分docker版本在整合`MySQL`时会出现**No DataSource 错误，估计基于官方提供的release版本自己打包为docker镜像
 
@@ -76,5 +76,23 @@ services:
       - $PWD/logs:/home/nacos/logs/
 ```
 
-[^1]: https://github.com/alibaba/nacos/issues/9751
+# 参数说明
 
+| 属性                       | 作用                     | 默认值 | 可选值      |
+| -------------------------- | ------------------------ | ------ | ----------- |
+| NACOS_SERVER_PORT          | nacos服务器端口          | 8848   |             |
+| SPRING_DATASOURCE_PLATFORM | 指定nacos的数据源        | mysql  | `mysql`或空 |
+| MYSQL_SERVICE_HOST         | mysql服务器地址          |        |             |
+| MYSQL_SERVICE_PORT         | mysql服务器端口          | 3306   |             |
+| MYSQL_SERVICE_DB_NAME      | mysql数据库名称          |        |             |
+| MYSQL_SERVICE_USER         | mysql数据库用户名        | root   |             |
+| MYSQL_SERVICE_PASSWORD     | mysql数据据密码          |        |             |
+| LDAP_URL                   | ldap服务的地址和端口号   |        |             |
+| LDAP_BASE_DC               | ldap搜索范围             |        |             |
+| LDAP_USER_DN               | ldap绑定账号[^2]         |        |             |
+| LDAP_USER_PASSWORD         | ldap绑定账号的密码       |        |             |
+| LDAP_UID                   | 用户账号字段             |        |             |
+| LDAP_CASE_SENSITIVE        | ldap认证时是否大小写敏感 |        |             |
+
+[^1]: https://github.com/alibaba/nacos/issues/9751
+[^2]: 部分`LDAP`数据库不支持匿名登录，此时需要管理员账号来绑定登录
