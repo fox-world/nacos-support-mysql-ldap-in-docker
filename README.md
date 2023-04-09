@@ -1,8 +1,10 @@
+# 背景
 
+> 由于`nacos`官方提供的docker镜像不支持`LDAP`登录[^1]，同时部分docker版本在整合`MySQL`时会出现**No DataSource** 错误，基于官方提供的release版本自己打包为docker镜像
 
-> 由于`nacos`官方提供的docker镜像不支持`LDAP`登录[^1]，同时部分docker版本在整合`MySQL`时会出现**No DataSource 错误，估计基于官方提供的release版本自己打包为docker镜像
+# 构建方式
 
-# 打包方式
+说明： 在构建时需要将`Dockerfile`、`docker-startup.sh`以及对应的`nacos`压缩文件放到同一个目录下
 
 ## 普通登录
 
