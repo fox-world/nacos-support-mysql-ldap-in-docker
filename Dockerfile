@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk
-MAINTAINER 卢运强 "yunqiang.lu@hirain.com"
+MAINTAINER 卢运强 "lucumt@gmail.com"
 
 RUN echo $JAVA_HOME
 
